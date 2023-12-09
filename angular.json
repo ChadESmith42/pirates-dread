@@ -75,7 +75,8 @@
               "browserTarget": "pirates-dread:build:production"
             },
             "development": {
-              "browserTarget": "pirates-dread:build:development"
+              "browserTarget": "pirates-dread:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -104,8 +105,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b4d3c939-e169-4119-8362-59b610f9af3c",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
