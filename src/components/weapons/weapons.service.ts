@@ -12,4 +12,8 @@ export class WeaponsService {
   getWeapons(): Observable<Weapon[]> {
     return this._weaponsAPI.getWeapons();
   }
+
+  getWeaponById(weaponId: number): Observable<Weapon> {
+    return this._weaponsAPI.findWeapon(weaponId);
+  }
 }
