@@ -1,1 +1,24 @@
-<p>weapons works!</p>
+<section>
+  <h3>Weapons</h3>
+  <div class="card-container" *ngIf="weapons$ | async as weapons">
+    <div *ngFor="let weapon of weapons; trackby: trackWeapons">
+      <article class="card">
+        <div class="weapon-title">{{ weapon.display_name }}</div>
+        <div class="card-body">
+          <div class="weapon-stats">
+            <div class="stat-item">
+              <span class="label">Class:</span> {{ weapon.weapon_type | titlecase }}
+            </div>
+            <div class="stat-item"><span class="label">Hit Points:</span> {{ weapon.hit_points }}</div>
+            <div class="stat-item"><span class="label">Durability:</span> {{ weapon.durability }}</div>
+            <div class="stat-item"><span class="label">Can be repaired:</span> {{ weapon.is_repairable === true ? 'Yes': 'No' }}</div>
+          </div>
+          <div class="weapon-score">
+            <span class="label">Score: </span>
+            <span class="value">{{ ((weapon.hit_points / 200) * weapon.durability) / 100 | percent }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

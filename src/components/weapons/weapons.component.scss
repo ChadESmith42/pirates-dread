@@ -1,0 +1,61 @@
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 0.5rem;
+  min-width: 25rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.weapon-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem 1rem 0.75rem 1rem;
+  background-color: #9f9f9f;
+}
+
+.stat-item {
+  font-size: 1rem;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 1.25rem;
+  font-variant: small-caps;
+}
+
+.weapon-stats {
+  display: flex;
+  flex-flow: column wrap;
+  border-bottom: 1px solid black;
+  margin: 0 0 1rem 0;
+}
+
+.weapon-class {
+  margin: 1rem 0 0 0;
+}
+
+.weapon-score {
+  .label {
+    font-weight: 500;
+    font-size: 1rem;
+    color: black;
+  }
+  .value {
+    color: #c01f2d;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+}

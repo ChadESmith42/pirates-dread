@@ -1,9 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Weapon } from 'src/models/weapon.model';
+import { WeaponsApiService } from 'src/services/weapons-api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeaponsService {
+  private _weaponsAPI: WeaponsApiService = inject(WeaponsApiService);
 
-  constructor() { }
+  getWeapons(): Observable<Weapon[]> {
+    return this._weaponsAPI.getWeapons();
+  }
 }
